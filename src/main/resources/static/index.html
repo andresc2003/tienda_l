@@ -1,24 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <title>Techshop</title>
         <meta charset="UTF-8">
+        <!-- la siguiente etiqueta es usada para informar a los SEO de busqueda -->
+        <meta name="description" content="TechShop tienda en línea"/>
+        <meta name="keyword" content="html,css,web"/>
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <a href="ejemplo2.html">Back</a>
-        <a href="index.html">Home</a>
-        <a href="ejemplo7.html">Next</a>
-        <hr />
+        <header id="header">
+            <nav>
+                <a href="ejemplo2.html">&triangleleft;</a>
+                <a href="index.html">Home</a>
+                <a href="ejemplo7.html">&triangleright;</a>
+            </nav>
+        </header>
 
-        <h1 style="text-align: center; background:black;color: white">Home</h1>
-        <p style="text-align: left"><strong> Esto es un párrafo </strong></p> 
-        
-        <p style="text-align: left">
-            <u><i> Lorem ipsum dolor</i></u> sit amet consectetur adipiscing elit fringilla dapibus taciti rhoncus, ad purus etiam auctor facilisis semper ultrices torquent in cursus massa ac, magnis leo eros netus vulputate blandit morbi metus bibendum nisi. Risus hac interdum cursus orci congue ad proin sem eget ligula, quisque porta hendrerit volutpat vitae suspendisse vivamus convallis dictum, lacus purus felis vestibulum duis quam sagittis nascetur massa. Platea lobortis non est auctor sodales, nulla ullamcorper praesent purus, interdum aliquet turpis metus.
-        </p>
-        
-        <p style="text-align: left">
-            Magna sem dis curae volutpat placerat taciti malesuada ac, cursus morbi sollicitudin maecenas vel arcu suspendisse gravida, platea egestas porta faucibus mus per facilisi. Urna eleifend hac ligula congue litora class inceptos habitant vel tincidunt tempus, convallis et tristique aliquam blandit duis volutpat dictumst porttitor malesuada elementum neque, imperdiet enim faucibus quam eget proin dis lacinia metus platea. Faucibus inceptos mollis porttitor natoque euismod netus dis scelerisque gravida cubilia nostra volutpat curae fames primis, purus hac risus accumsan tellus nullam cum urna viverra etiam enim ultricies donec.
-        </p>
-    </body>
+        <hr>
+        <h1>Home</h1>
+        <aside id="aside">
+            <h2>Últimas noticas....</h2>
+            <p>Los productos de la tecnología x están en descuento...</p>
+        </aside>
+        <div id="contenido">
+            <section class="encabezado"> <!-- Acá va el contenido principal -->
+                <article>
+                    <header>
+                        <h2>Producto de la semana </h2>
+                    </header>
+                    <p>
+                        El producto Alienware lleva su nombre en honor a la pelicula de culto<cite> Aliens</cite> el septimo pasajero
+                    </p>
+                    <figure>
+                        <img src="img/pc.jpg" alt="width 200"/>
+                        <figcaption>La novedad de la semana</figcaption>
+                    </figure>
+                    <footer>
+                        <a href="#">Comprar</a>
+                    </footer>
+                </article>
+
+                <article>
+                    <header>
+                        <h2>La novedad</h2>
+                    </header>
+                    <p>
+                        El producto Alienware lleva su nombre en honor a la pelicula de culto<cite> Aliens</cite> el septimo pasajero
+                    </p>
+                    <figure>
+                        <img src="img/pc.jpg" alt="width 200"/>
+                        <figcaption>La novedad de la semana</figcaption>
+                    </figure>
+                    <footer>
+                        <a href="#">Comprar</a>
+                    </footer>
+                </article>
+
+            </section>
+
+            <section>
+                <article>
+                    <p>Usted ha escuchado del termino leer la letra <small>pequeña</small> refiriendose a terminologia legal</p>
+                </article>
+            </section>
+        </div>
+        <footer id="footer">
+            Desarrollos tecnologicos 2023 &COPY; <address> +505 32323234 </address>
+    </footer>
+
+</body>
 </html>
