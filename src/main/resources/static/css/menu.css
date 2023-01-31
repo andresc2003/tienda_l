@@ -11,6 +11,7 @@
 
 body {
     padding: 80px 20px 0;
+    font-family: san-serif;
 }
 
 #header {
@@ -21,6 +22,45 @@ body {
     height: 80px;
     background-color: blue;
     color: black;
+}
+.nav {
+    display: flex;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    line-height: 80px;
+    list-style: none;
+}
+
+.nav-menu item {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 8px;
+    
+}
+
+.nav-menu-link:hover {
+    font-size: 22px;
+    background-color: #024070;
+    transition: 0.5s
+}
+.logo {
+    font-size: 30px;
+    font-width: bold;
+    padding: 0 40px;
+    line-height: 80px;
 }
 
 #aside {
@@ -53,4 +93,23 @@ body {
     background-color: #fff552;
     color: black;
     text-align: center;
+}
+
+.centrado {
+    text-align: center
+}
+
+
+.derecha {
+    text-align: right
+}
+/* odd es impar, even es par*/
+tbody tr:nth-child(odd){
+    background-color: red;
+    color: yellow;
+}
+
+tr:nth-child(even){
+    background-color: yellow;
+    color: rede;
 }

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Techshop</title>
+        <meta charset="UTF-8">
+        <!-- la siguiente etiqueta es usada para informar a los SEO de busqueda -->
+        <meta name="description" content="TechShop tienda en línea"/>
+        <meta name="keyword" content="html,css,web"/>
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header id="header">
+            <nav>
+                <a href="ejemplo2.html">&triangleleft;</a>
+                <a href="index.html">Home</a>
+                <a href="ejemplo7.html">&triangleright;</a>
+            </nav>
+        </header>
+
+        <hr>
+        <h1>Formulario</h1>
+        <aside id="aside">
+            <h2>Últimas noticas....</h2>
+            <p>Los productos de la tecnología x están en descuento...</p>
+        </aside>
+        <div id="contenido">
+            <section>
+                <article>
+                    <header>Form</header>
+                        <form name="info" action="registro.jsp" method="post">
+                            <label>Nombre</label>
+                            <input placeholder="Su nombre" type="text" name="nombre" value="" size="35" />
+                            <br>
+                            <label>Clave</label>
+                            <input type="password" name="clave" value="" size="10" />
+                            <br>
+                            <input type="hidden" name="id" value="1" />
+                            <br>
+                            <label>Direccion</label>
+                            <textarea name="direccion" rows="4" cols="30">
+San José, Costa Rica, de la ultima parada del bus amarillo, 400 metros norte y 50 sur a la par del faro quebrado
+                            </textarea>
+                            <br>
+                            <label>Nivel escolar</label>
+                            <select name="nivel">
+                                <option>Primaria</option>
+                                <option>Secundaria</option>
+                                <option>Universidad</option>
+                            </select>
+                            <br>
+                            <label> Sus pasatiempos </label>
+                            <input type="checkbox" name="futbol" value="futbol" checked="checked" />
+                            <input type="checkbox" name="baloncesto" value="baloncesto"  />
+                            <input type="checkbox" name="pingpong" value="pingpong" />
+                            <br>
+                            <input type="submit" value="Enviar" />
+                            
+                        </form>
+                </article>
+                
+            </section>
+        </div>
+        <footer id="footer">
+            Desarrollos tecnologicos 2023 &COPY; <address> +505 32323234 </address>
+    </footer>
+
+</body>
+</html>
