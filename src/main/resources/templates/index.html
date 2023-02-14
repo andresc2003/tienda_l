@@ -3,32 +3,40 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="https://thymeleaf.org">
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <div>Saludos</div>
-        
-         <table border="0">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Correo</th>
-                    <th>Telefono</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="cliente : ${clientes}">
-                    <td>[[${cliente.nombre}]]</td>
-                    <td>[[${cliente.apellidos}]]</td>
-                    <td>[[${cliente.correo}]]</td>
-                    <td>[[${cliente.telefono}]]</td>
-                </tr>
-            </tbody>
-        </table>
-
+        <header th:replace="layout/plantilla :: header"/>
+       <h2>Listado de Clientes</h2>
+       <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
+        <div th:if="${clientes != null and !clientes.empty}">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cliente : ${clientes}">
+                        <td>[[${cliente.nombre}]]</td>
+                        <td>[[${cliente.apellidos}]]</td>
+                        <td>[[${cliente.correo}]]</td>
+                        <td>[[${cliente.telefono}]]</td>
+                        <td><a th:href="@{cliente/eliminar/} + ${cliente.idCliente}">Eliminar</a></td>
+                        <td><a th:href="@{cliente/modificar/} + ${cliente.idCliente}">Modificar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div th:if="${clientes == null or clientes.empty}">
+            <h2>No hay clientes que mostrar...</h2>
+        </div>
+       <footer th:replace="layout/plantilla :: header"/>
     </body>
 </html>
