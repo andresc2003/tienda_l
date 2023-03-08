@@ -14,17 +14,17 @@ public class ClienteServiceImpl implements ClienteService{
     
     @Autowired
     private ClienteDao clienteDao;
-    
+
     @Override
     @Transactional(readOnly=true)
     public List<Cliente> getClientes() {
-        return (List<Cliente>)clienteDao.findAll();
+        return (List<Cliente>) clienteDao.findAll();
     }
 
     @Override
     @Transactional(readOnly=true)
     public Cliente getCliente(Cliente cliente) {
-        return clienteDao.findById(cliente.getIdCliente()).orElse(null);
+       return clienteDao.findById(cliente.getIdCliente()).orElse(null);
     }
 
     @Override
@@ -34,9 +34,8 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
-    @Transactional
     public void delete(Cliente cliente) {
-       clienteDao.delete(cliente);
+        clienteDao.delete(cliente);
     }
-    
+ 
 }
