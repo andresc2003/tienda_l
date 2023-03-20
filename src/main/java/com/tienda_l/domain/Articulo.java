@@ -33,13 +33,14 @@ public class Articulo implements Serializable{
         
     }
 
-    public Articulo(String descripcion, String detalle, double precio, int existencias, String imagen, boolean activo) {
+    public Articulo(String descripcion, String detalle, double precio, int existencias, String imagen, boolean activo, Categoria catgegoria) {
         this.descripcion = descripcion;
         this.detalle = detalle;
         this.precio = precio;
         this.existencias = existencias;
         this.imagen = imagen;
         this.activo = activo;
+        this.categoria = categoria;
     }
 
    
