@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="hhtps://thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity6">
     <head th:fragment="head">
         <title>TechShop</title>
         <meta charset="UTF-8"/>
@@ -17,8 +19,8 @@
                     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="#navbarCollapse">
-                        <ul class="navbar-nav">
+                    <div class="collapse navbar-collapse justify-content-between" id="#navbarCollapse">
+                        <ul class="navbar-nav" sec:authorize="hasRole('ROLE_ADMIN') OR hasRole('ROLE_VENDEDOR')">
                             <li class="navbar-item px-2">
                                 <a class="nav-menu-link nav-link" th:href="@{/cliente/listado}">[[#{plantilla.clientes}]]</a>                                                      
                             </li>
@@ -27,6 +29,29 @@
                             </li>
                             <li class="navbar-item px-2">
                                 <a class="nav-menu-link nav-link" th:href="@{/articulo/listado}">[[#{plantilla.articulos}]]</a>                                                      
+                            </li>
+                            <li class="navbar-item px-2" sec:authorized="hasRole('ROLE_ADMIN')">
+                                <a class="nav-menu-link nav-link" th:href="@{/usuario/listado}">[[#{plantilla.articulos}]]</a>                                                      
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav" sec:authorize="!isAuthenticated()">
+                            <li class="navbar-item px-2">
+                                <a class="nav-menu-link nav-link" th:href="@{/login}">
+                                    <i class="fas fa-sign-in"></i>
+                                </a>                                                      
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav" sec:authorize="isAuthenticated()">
+                            <li class="nav-item text-white my-auto">
+                                <i class="fas fa-user"></i> <span sec:authentication="name">Alberto</span>
+                            </li>
+                            <li class="navbar-item my-auto">
+                                <form method="POST" th:action="@{/login}">
+                                    <button type="submit" 
+                                            class="btn btn-dark ">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </button>
+                                </form>                                                      
                             </li>
                         </ul>
                     </div>
@@ -49,17 +74,15 @@
         <footer th:fragmente="footer" class="bg-info text-white mt-5 px-2">
             <div class="container">
                 <div class="col">
-                    <p class="lead text-center">
-                        &COPY [[#{plantilla.derechos}]]  | <a th:href="@{/(lang=es)}">ES </a> |  <a th:href="@{/(lang=en)}">EN </a> 
-                    <form method="POST" th:action="@{/logout}" style="display: inline">
-                        <a href="#" onclick="this.parentNode.submit();">Logout</a>
-
-                    </form>
+                    <p class="lead text-center">&COPY [[#{plantilla.derechos}]] | <a th:href="@{/(lang=es)}">ES</a> | <a th:href="@{/(lang=en)}">EN</a>
+                        <form method="POST" th:action="@{/logout}" style="display:inline">
+                            <a href="#" onclick="this.parentNode.submit();">Logout</a>
+                        </form>
                     </p>
+
                 </div>
             </div>                       
         </footer>
 
     </body>
 </html>
-

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html xlmns="http://w3.org/1999/xhtml" 
-      xmlns:th="hhtps://thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity6">
     <head th:replace="~{layout/plantilla :: head}">
         <title>TechShop</title>
         <meta charset="UTF-8"/>
@@ -48,7 +49,7 @@
                             class="btn btn-primary btn-block" 
                             data-bs-toggle="modal" 
                             data-bs-target="#agregarCliente">
-                            <i class="fas fa-plus"></i> [[#{accion.guardar}]]
+                            <i class="fas fa-plus"></i> [[#{cliente.agregar}]]
                         </button>
                     </div>
                 </div>
@@ -83,7 +84,7 @@
                                     <input type="text" class="form-control" name="apellidos" required="true">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email">[[#{cliente.correo}]]</label>
+                                    <label for="email">[[#{cliente.correos}]]</label>
                                     <input type="email" class="form-control" name="correo" required="true">
                                 </div>
                                 <div class="mb-3">
@@ -91,12 +92,12 @@
                                     <input type="tel" class="form-control" name="telefono">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="telefono">[[#{cliente.limite}]]</label>
+                                    <label for="limite">[[#{cliente.limite}]]</label>
                                     <input type="number" class="form-control" name="credito.limite">
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button class="btn btn-primary" type="submit">[[#{cliente.aepllidos}]]</button>
+                                <button class="btn btn-primary" type="submit">[[#{accion.guardar}]]</button>
                             </div>
                         </form>
                     </div>
@@ -127,12 +128,12 @@
                                             <td>[[${cliente.nombre}]]</td>
                                             <td>[[${cliente.apellidos}]]</td>
                                             <td>[[${cliente.credito.limite}]]</td>
-                                            <td><a th:href="@{/cliente/eliminar/}+${cliente.idCliente}"
+                                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/cliente/eliminar/}+${cliente.idCliente}"
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
                                                 <a th:href="@{/cliente/modificar/}+${cliente.idCliente}"
                                                    class="btn btn-success">
-                                                    <i class="fas fa-pencil"></i>[[#{accion.actualizar}]]</a></td></tr>
+                                                    <i class="fas fa-pencil"></i> [[#{accion.actualizar}]]</a></td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -174,7 +175,7 @@
                                     <div class="col">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h4>[[#{accion.actualizar}]]</h4>
+                                                <h4>[[#{cliente.actualizar}]]</h4>
                                             </div>
                                             <div class="card-body">
                                                 <div class="mb-3">
