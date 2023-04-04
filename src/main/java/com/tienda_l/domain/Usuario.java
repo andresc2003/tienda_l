@@ -16,6 +16,7 @@ public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario")
     private Long idUsuario;
 
     @NotEmpty
@@ -28,10 +29,5 @@ public class Usuario implements Serializable {
     @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
     @OneToMany
     private List<Rol> roles;
-
-    public Usuario() {
-
-    }
-
 
 }

@@ -225,13 +225,13 @@
                             <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
                         </a>
                     </div>
-                    <div class="col-md-4 d-grid">                                
+                    <div class="col-md-4 d-grid"sec:authoirze="hasRole('ROLE_ADMIN')">                                
                         <a th:href="@{/cliente/eliminar/}+${cliente.idCliente}"
                            class="btn btn-danger">
                             <i class="fas fa-trash"></i> [[#{accion.eliminar}]]
                         </a>
                     </div>
-                    <div class="col-md-4 d-grid">
+                    <div class="col-md-4 d-grid" sec:authoirze="hasRole('ROLE_ADMIN')">
                         <button type="submit" class="btn btn-success">
                             <i class="fas fa-check"></i> [[#{accion.guardar}]]
                         </button>
@@ -255,7 +255,6 @@
                     </div>
                 </div>
             </footer>
-
 
     </body>
 </html>
